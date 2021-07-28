@@ -1,17 +1,53 @@
-body{
-    height: 100vh;
+.main {
+    flex:1;
+    display:grid;
+    grid-template-rows: 100px 100px 1fr 100px;
+    grid-template-columns: 100px 1fr 100px;
+    grid-template-areas:
+        "title  title  title "
+        "nav    main   ad    "
+        "nav    main   side  "
+        "footer footer footer";
+}
+body {
     display: flex;
     flex-direction: column;
+    height:10000px;
+    margin:0;
 }
-.topNavigation{
+.header {
     height: 70px;
-    text-align: center;
-    background-color: #888;
-    color: #fff;
+    background-color: black;
 }
-.content{
-    flex: 1;
-    background-color: #eee;
-    text-align: center;
-    margin-top: 10px;
+.footer {
+    height:200px;
+    background-color: rgb(160, 151, 151);
+}
+.main > * {
+    margin: 8px;
+    padding: 25px;
+}
+header {
+    grid-area: title;
+    background: #faa;
+}
+main {
+    grid-area: main;
+    background: #afa;
+}
+nav {
+    grid-area: nav;
+    background: #aaf;
+}
+.side {
+    grid-area: side;
+    background: #faf;
+}
+footer {
+    grid-area: footer;
+    background: #aaa;
+}
+.ad {
+    grid-area: ad;
+    background: #888;
 }
